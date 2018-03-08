@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>All Music</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresher)="refresh($event)">
+    <ion-refresher-content 
+    pullingIcon="arrow-dropdown"
+    pullingText="Pull to refresh"
+    refreshingSpinner="circles"
+    refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>
+
+
+  <ion-card *ngFor="let music of allMusic">
+
+
+      <img  src="{{music.image}}" title="{{music.name}}"/>
+      <ion-card-content>
+        <ion-card-title>
+          {{music.name}}
+        </ion-card-title>
+
+        <ion-item>
+          <button ion-button item-left (click)="shareSong(music)" small><ion-icon name="share-alt" ></ion-icon></button>
+          <button ion-button item-right (click)="listenMusic(music)" small><ion-icon name="headset" ></ion-icon></button>
+          <button ion-button (click)="addFavorites(music)" small end> <ion-icon name="heart" color="danger"></ion-icon> </button>
+
+        </ion-item>
+      </ion-card-content>
+  </ion-card>
+
+</ion-content>

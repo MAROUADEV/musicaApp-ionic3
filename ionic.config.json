@@ -1,0 +1,8 @@
+{
+  "name": "appvid32_musica",
+  "app_id": "0ae8cb03",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
